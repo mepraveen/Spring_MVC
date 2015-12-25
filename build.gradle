@@ -1,0 +1,39 @@
+apply plugin: 'java'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'war'
+apply plugin: 'maven'
+
+webAppDirName = 'WebContent'
+
+repositories {
+	mavenLocal ()
+	mavenCentral()
+}
+
+dependencies {
+	compile 'org.springframework:spring-core:4.1.2.RELEASE'
+	compile 'org.springframework:spring-web:4.1.2.RELEASE'
+	compile 'org.springframework:spring-webmvc:4.1.2.RELEASE'
+	compile 'org.springframework:spring-context:4.1.2.RELEASE'	
+	compile 'org.springframework:spring-jdbc:4.1.2.RELEASE'
+	compile 'org.springframework:spring-test:4.1.2.RELEASE'
+	compile 'org.springframework:spring-aop:4.1.2.RELEASE'
+	compile 'com.fasterxml.jackson.core:jackson-databind:2.4.4'
+	compile 'com.fasterxml.jackson.core:jackson-core:2.4.4'
+	compile 'com.fasterxml.jackson.core:jackson-annotations:2.4.4'
+	compile 'javax.servlet:javax.servlet-api:3.1.0'
+	compile 'javax.servlet.jsp:javax.servlet.jsp-api:2.3.1'
+	compile 'javax.el:javax.el-api:3.0.0'
+		compile 'commons-httpclient:commons-httpclient:3.1'
+	compile 'org.springframework:spring-context-support:4.1.2.RELEASE'
+
+
+	
+}
+
+
+
+war {
+    from 'WebContent' // adds a file-set to the root of the archive
+}
+
