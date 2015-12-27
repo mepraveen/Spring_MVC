@@ -10,7 +10,8 @@ public class Student {
 	
 	
 	//this annotation is use for form validation this can also be done putting error msg in mesage property file
-	@Size(min=2,max=30, message="Please Enter HobbyField not less than {min} Alphabeta and no more than {max}")
+//	@Size(min=2,max=30, message="Please Enter HobbyField not less than {min} Alphabeta and no more than {max}")
+	@Size(min=5,max=40)
 	private String hobby;
 	private Long mobile;
 	private Date dob;
