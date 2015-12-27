@@ -3,9 +3,13 @@ package com.praveen.domain;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class Student {
+	
+	@Pattern(regexp="[^0-9]*")
 	private String name;
 	
 	
@@ -14,6 +18,8 @@ public class Student {
 	@Size(min=5,max=40)
 	private String hobby;
 	private Long mobile;
+	
+	@Past
 	private Date dob;
 	private Address address;
 	private ArrayList<String> skills;

@@ -27,6 +27,9 @@
  <bean id ="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
  <property name="basename" value="/WEB-INF/messages"/>
  
+ <!-- This is for at run time loads all the changes done in properties ,this is only  good to do in development tym. -->
+ <property name="cacheSeconds" value="1"/>
+ 
  </bean>
  
  </beans>
