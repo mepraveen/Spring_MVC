@@ -13,6 +13,12 @@
 
   <context:component-scan base-package="com.praveen.controller" />
  <mvc:annotation-driven/>
+ 
+ 
+  <!-- This configuration let Spring framework  about interceptor class -->
+ <mvc:interceptors>
+ <bean class="com.praveen.interceptor.DayOffInterceptor"/>
+ </mvc:interceptors>
 
   <bean id="viewResolver"
     	class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
@@ -31,5 +37,7 @@
  <property name="cacheSeconds" value="1"/>
  
  </bean>
+ 
+ 
  
  </beans>
