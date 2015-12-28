@@ -19,7 +19,7 @@ public class Student {
 //	@Size(min=2,max=30, message="Please Enter HobbyField not less than {min} Alphabeta and no more than {max}")
 	
 	
-	@Size(min=5,max=40)  @IsVAlidHobby
+	@Size(min=5,max=40)  @IsVAlidHobby(listOfValidHobbies="Music|Dance|Cricket|BaseBall")
 	private String hobby;
 	
 	
