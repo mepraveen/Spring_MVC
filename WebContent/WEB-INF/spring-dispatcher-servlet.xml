@@ -13,6 +13,22 @@
 
   <context:component-scan base-package="com.praveen.controller" />
  <mvc:annotation-driven/>
+ 
+ 
+  <!-- This configuration let Spring framework  about interceptor class -->
+  
+  
+  <!-- <mvc:interceptors> intercept all the url  -->
+ <mvc:interceptors>
+ 
+ <!--<mvc:interceptor> intercept particular url as following  -->
+ 
+ <mvc:interceptor>
+ <mvc:mapping path="/form/admission"/>
+ <bean class="com.praveen.interceptor.DayOffInterceptor"/>
+ </mvc:interceptor>
+ 
+ </mvc:interceptors>
 
   <bean id="viewResolver"
     	class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
@@ -23,5 +39,15 @@
             <value>.jsp</value>
         </property>
  </bean>
+ 
+ <bean id ="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+ <property name="basename" value="/WEB-INF/messages"/>
+ 
+ <!-- This is for at run time loads all the changes done in properties ,this is only  good to do in development tym. -->
+ <property name="cacheSeconds" value="1"/>
+ 
+ </bean>
+ 
+ 
  
  </beans>
