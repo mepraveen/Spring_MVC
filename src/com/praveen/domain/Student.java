@@ -3,16 +3,29 @@ package com.praveen.domain;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.praveen.validator.IsVAlidHobby;
+
 public class Student {
+	
+	@Pattern(regexp="[^0-9]*")
 	private String name;
 	
 	
 	//this annotation is use for form validation this can also be done putting error msg in mesage property file
-	@Size(min=2,max=30, message="Please Enter HobbyField not less than {min} Alphabeta and no more than {max}")
+//	@Size(min=2,max=30, message="Please Enter HobbyField not less than {min} Alphabeta and no more than {max}")
+	
+	
+	@Size(min=5,max=40)  @IsVAlidHobby(listOfValidHobbies="Music|Dance|Cricket|BaseBall")
 	private String hobby;
+	
+	
 	private Long mobile;
+	
+	@Past
 	private Date dob;
 	private Address address;
 	private ArrayList<String> skills;
